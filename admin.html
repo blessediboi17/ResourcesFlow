@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResourceFlow - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ResourceFlow <span style="font-size: 0.8rem; color: var(--accent-color);">Admin</span></a>
+            <button id="logoutBtn" style="display:none; background: transparent; border: 1px solid red; color: red; padding: 6px 12px; border-radius: 6px; cursor: pointer;">Logout</button>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 40px; max-width: 800px;">
+        
+        <div id="login-panel" class="glass-card" style="padding: 40px; margin: 0 auto;">
+            <h2 style="margin-bottom: 20px;">Secure Admin Login</h2>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <input type="email" id="loginEmail" placeholder="Admin Email" style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 8px; color: white;">
+                <input type="password" id="loginPassword" placeholder="Password" style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 8px; color: white;">
+                <button id="loginBtn" style="background: var(--accent-color); border: none; padding: 12px; border-radius: 8px; color: white; font-weight: 600; cursor: pointer;">Sign In</button>
+            </div>
+        </div>
+
+        <div id="dashboard-panel" class="glass-card" style="padding: 40px; display: none;">
+            <h2 style="margin-bottom: 24px;">Upload New Asset Resource</h2>
+            
+            <form id="uploadForm" style="display: flex; flex-direction: column; gap: 20px;">
+                <div>
+                    <label style="display:block; margin-bottom: 6px; font-size: 0.9rem;">Asset Title</label>
+                    <input type="text" id="assetTitle" required style="width:100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 8px; color: white;">
+                </div>
+
+                <div>
+                    <label style="display:block; margin-bottom: 6px; font-size: 0.9rem;">Description</label>
+                    <textarea id="assetDesc" rows="3" required style="width:100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 8px; color: white; resize: none;"></textarea>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div>
+                        <label style="display:block; margin-bottom: 6px; font-size: 0.9rem;">Category</label>
+                        <select id="assetCategory" style="width:100%; padding: 12px; background: #111827; border: 1px solid var(--glass-border); border-radius: 8px; color: white;">
+                            <option value="Flyer Templates">Flyer Templates</option>
+                            <option value="Banner Templates">Banner Templates</option>
+                            <option value="Logo Templates">Logo Templates</option>
+                            <option value="Social Media Templates">Social Media Templates</option>
+                            <option value="Fonts">Fonts</option>
+                            <option value="Mockups">Mockups</option>
+                            <option value="PNG Packs">PNG Packs</option>
+                            <option value="Icons">Icons</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display:block; margin-bottom: 6px; font-size: 0.9rem;">File Size Details (e.g. 45 MB, 1.2 GB)</label>
+                        <input type="text" id="assetSize" placeholder="12.4 MB" required style="width:100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 8px; color: white;">
+                    </div>
+                </div>
+
+                <div>
+                    <label style="display:block; margin-bottom: 6px; font-size: 0.9rem;">Tags (Comma Separated)</label>
+                    <input type="text" id="assetTags" placeholder="mockup, clean, minimal, presentation" style="width:100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 8px; color: white;">
+                </div>
+
+                <div style="display: flex; gap: 20px; align-items: center; margin: 10px 0;">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="assetFeatured"> Feature on Homepage
+                    </label>
+                </div>
+
+                <div style="border-top: 1px solid var(--glass-border); padding-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div>
+                        <label style="display:block; margin-bottom: 6px; font-size: 0.9rem; color: var(--accent-color);">1. Thumbnail Image File</label>
+                        <input type="file" id="fileThumbnail" accept="image/*" required>
+                    </div>
+                    <div>
+                        <label style="display:block; margin-bottom: 6px; font-size: 0.9rem; color: var(--accent-color);">2. Resource Asset File (.zip, .otf, etc.)</label>
+                        <input type="file" id="fileAsset" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" style="margin-top: 20px; background: var(--accent-color); border: none; padding: 14px; border-radius: 8px; color: white; font-weight: bold; cursor: pointer;">
+                    Publish Resource Asset
+                </button>
+            </form>
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+                          </html>
