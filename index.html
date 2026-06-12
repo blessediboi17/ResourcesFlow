@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResourceFlow - Premium Design Assets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ResourceFlow</a>
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="#">Categories</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero container">
+        <h1>Free Premium <span>Design Resources</span></h1>
+        <p>Browse and download high-quality templates, fonts, mockups, and assets for your next creative project.</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search templates, fonts, mockups...">
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <div class="section-title">
+            <h2>Featured Assets</h2>
+        </div>
+        <div class="grid" id="featuredGrid">
+            <div class="glass-card card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);"></div>
+                <div class="card-body">
+                    <span class="card-category">Mockup</span>
+                    <h3 class="card-title">Minimalist iPhone 15 Pro Mockup</h3>
+                    <div class="card-footer">
+                        <span>PSD</span>
+                        <span>42.5 MB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <h2>Latest Uploads</h2>
+        </div>
+        <div class="grid" id="latestGrid">
+            </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
