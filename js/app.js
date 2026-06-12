@@ -95,3 +95,14 @@ function renderGrid(gridId, resources) {
         </div>
     `).join('');
               }
+
+// Mobile Menu Toggle Logic
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+}
