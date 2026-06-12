@@ -9,6 +9,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
+    // Mobile Menu Toggle Logic
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+}
     const { data: resource, error } = await supabase
         .from('resources')
         .select('*')
