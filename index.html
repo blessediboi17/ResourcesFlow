@@ -12,14 +12,20 @@
 <body>
 
     <header>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">ResourceFlow</a>
-            <nav class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="#">Categories</a>
-                <a href="admin.html">Admin</a>
-            </nav>
-        </div>
+    <div class="container nav-container">
+        <a href="index.html" class="logo">ResourceFlow</a>
+        
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" id="navHome">Home</a>
+            <a href="admin.html" id="navAdmin">Admin Panel</a>
+        </nav>
+    </div>
     </header>
 
     <section class="hero container">
